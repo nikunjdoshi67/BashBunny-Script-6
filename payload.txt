@@ -6,6 +6,9 @@
 Q SET_LANGUAGE US
 ATTACKMODE HID STORAGE
 
+#Launch Powershell
+Q GUI r 
+
 LED B 200
 
 #Launch Powershell As Admin
